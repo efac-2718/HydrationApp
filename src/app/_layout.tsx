@@ -25,7 +25,7 @@ export default function TabLayout() {
       />
       <Tabs.Screen
         name="about"
-        options={{ title: 'About', tabBarIcon: () => <Text>ℹ️</Text> }}
+        options={{ title: 'Information', tabBarIcon: () => <Text>ℹ️</Text> }}
       />
     </Tabs>
   );
