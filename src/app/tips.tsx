@@ -1,8 +1,8 @@
-import { Text, View, StyleSheet } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function TipsTab() {
     return (
-        <View>
+        <View style={styles.container}>
             <Text style={styles.title}>Why Hydrate? 🌊</Text>
             <Text style={styles.paragraph}>
                 Boosts skin health and beauty
@@ -21,13 +21,24 @@ export default function TipsTab() {
 }
 
 const styles = StyleSheet.create({
+    container:{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#E2E8F0",
+    },
     title:{
-        color: "blue",
-        fontSize: 16
+        color: "#1696D2",
+        fontSize: 22,
+        fontWeight: 700,
+        alignContent: "center",
+        paddingBottom: 10
     },
     paragraph: {
         color: "gray",
-        fontSize: 12
+        fontSize: 16,
+        alignContent: "center",
+        paddingBottom: 2
     }
 }
 );

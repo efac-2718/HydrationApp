@@ -1,8 +1,8 @@
-import { Text, View, StyleSheet } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function TipsTab() {
     return (
-        <View>
+        <View style={styles.container}>
             <Text style={styles.title}>About This App</Text>
             <Text style={styles.paragraph}>
                 Built for Mobile Application Development
@@ -13,7 +13,7 @@ export default function TipsTab() {
             <Text style={styles.paragraph}>
                 and Expo Router tab navigation
             </Text>
-             <View style={{ height: 20 }} />
+             <View style={{ height: 40 }} />
             <Text style={styles.paragraph}>
                 Developed with React Native and Expo
             </Text>
@@ -25,11 +25,20 @@ export default function TipsTab() {
 }
 
 const styles = StyleSheet.create({
+    container:{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#E2E8F0",
+    },
     title:{
-        fontSize: 16
+        fontSize: 22,
+        fontWeight: 700,
+        paddingBottom: 15
     },
     paragraph: {
-        fontSize: 12
+        fontSize: 16,
+        color: "gray"
     }
 }
 );
