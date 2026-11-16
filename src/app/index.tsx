@@ -26,7 +26,7 @@ export default function ReminderTab() {
       content: {
         title: "💧 Hydration Alert",
         body: message,
-        sound: "true",
+        sound: true,
       },
       trigger: {
         type: Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL,
@@ -67,13 +67,13 @@ export default function ReminderTab() {
         </Text>
 
         <Pressable style={({ pressed }) => [styles.button,
-        {backgroundColor: pressed ? "blue" : "green"}
-      ]} onPress={stopReminder}>
+        pressed && styles.buttonPressed,
+      ]} onPress={scheduleReminder}>
           <Text style={styles.buttonText}>Start Reminder</Text>
         </Pressable>
         <View style={{ height: 10 }} />
         <Pressable style={({ pressed }) => [styles.button,
-        {backgroundColor: pressed ? "blue" : "green"}
+        pressed && styles.buttonPressed,
       ]} onPress={stopReminder}>
           <Text style={styles.buttonText}>Stop Reminder</Text>
         </Pressable>
@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "#E2E8F0",
   },
   emoji: {
     fontSize: 64,
@@ -104,7 +105,15 @@ const styles = StyleSheet.create({
     width: "80%",
   },
   button: {
+    backgroundColor: "#1E293B",
     marginBottom: 10,
+    height: 60,
+    width: '80%',
+    borderRadius: 18,
+    justifyContent: "center",
+    alignItems: "center",
+    borderBottomWidth: 5,
+    borderBottomColor: "#181817",
   },
   status: {
     fontSize: 16,
@@ -114,8 +123,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "white",
     fontWeight: "bold",
+    margin: 5
+    
   },
   buttonPressed: {
-    backgroundColor: "#0A84FF",
-  },
+
+  }
 });

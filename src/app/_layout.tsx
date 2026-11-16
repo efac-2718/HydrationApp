@@ -1,5 +1,5 @@
 import * as Notifications from 'expo-notifications';
-import {Tabs} from 'expo-router';
+import { Tabs } from 'expo-router';
 import { Text } from 'react-native';
 
 //Global Foreground Handler
@@ -14,7 +14,26 @@ Notifications.setNotificationHandler({
 
 export default function TabLayout() {
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: '#OEA5E9' }}>
+    <Tabs screenOptions={{tabBarActiveTintColor: '#FFFFFF' , tabBarStyle: {
+      backgroundColor: "#1E293B",
+      borderTopWidth: 0,
+      height: 75},
+      tabBarInactiveTintColor: '#94A3B8',
+      tabBarLabelStyle: {
+        fontSize: 12,
+        fontWeight: 600,
+      },
+      headerStyle: {
+        backgroundColor: '#1E293B'
+      },
+      headerTintColor: "#FFFFFF",
+      headerTitleStyle: {
+        fontSize: 22,
+        fontWeight: 'bold',
+      }, 
+      headerTitleAlign: 'center',
+      headerShadowVisible: false,
+    }}>
       <Tabs.Screen
         name="index"
         options={{ title: 'Reminder', tabBarIcon: () => <Text>⏰</Text> }}
@@ -25,7 +44,7 @@ export default function TabLayout() {
       />
       <Tabs.Screen
         name="about"
-        options={{ title: 'Information', tabBarIcon: () => <Text>ℹ️</Text> }}
+        options={{ title: 'About', tabBarIcon: () => <Text>ℹ️</Text> }}
       />
     </Tabs>
   );
